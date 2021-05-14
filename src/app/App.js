@@ -3,8 +3,6 @@ import { Switch, Route, Redirect, NavLink } from 'react-router-dom'
 import { AppointmentsPage } from '../containers/appointmentsPage/AppointmentsPage'
 import { ContactsPage } from '../containers/contactsPage/ContactsPage'
 
-import { v4 as uuidv4 } from 'uuid'
-
 const App = () => {
   const ROUTES = {
     CONTACTS: '/contacts',
@@ -13,24 +11,24 @@ const App = () => {
 
   // Define state variables for contacts and appointments
   const [contacts, setContacts] = useState([
-    { id: 1, name: 'Rachid', phone: '+212777063048' },
-    { id: 2, name: 'Halima', phone: '+33624063450' },
+    {
+      name: 'Rachid',
+      phone: '+212777063048',
+      email: 'rachid3alaoui@gmail.com',
+    },
+    { name: 'Halima', phone: '+33624063450', email: 'halima@gmail.com' },
   ])
   const [appointments, setAppointments] = useState([])
 
   // Implement functions to add data to contacts and appointments
   const addNewContact = (name, phone, email) => {
-    setContacts(prevState => [
-      ...prevState,
-      { id: uuidv4(), name, phone, email },
-    ])
+    setContacts(prevState => [...prevState, { name, phone, email }])
   }
 
   const addNewAppointment = (title, contact, date, time) => {
     setAppointments(prevState => [
       ...prevState,
       {
-        id: uuidv4(),
         title,
         contact,
         date,
