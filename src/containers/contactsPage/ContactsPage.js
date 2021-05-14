@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
 import { ContactForm } from '../../components/contactForm/ContactForm'
+import { TileList } from '../../components/tileList/TileList'
 
 export const ContactsPage = ({ contacts, addNewContact }) => {
   /*
   Define state variables for 
   contact info and duplicate check
   */
-  const [contactName, setContactName] = useState(null)
-  const [contactPhone, setcontactPhone] = useState(null)
-  const [contactEmail, setcontactEmail] = useState(null)
+  const [contactName, setContactName] = useState('')
+  const [contactPhone, setcontactPhone] = useState('')
+  const [contactEmail, setcontactEmail] = useState('')
 
   const handleSubmit = e => {
     e.preventDefault()
