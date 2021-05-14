@@ -12,10 +12,13 @@ const App = () => {
   }
 
   // Define state variables for contacts and appointments
-  const [contacts, setContacts] = useState([])
+  const [contacts, setContacts] = useState([
+    { id: 1, name: 'Rachid', phone: '+212777063048' },
+    { id: 2, name: 'Halima', phone: '+33624063450' },
+  ])
   const [appointments, setAppointments] = useState([])
-  // Implement functions to add data to contacts and appointments
 
+  // Implement functions to add data to contacts and appointments
   const addNewContact = (name, phone, email) => {
     setContacts(prevState => [
       ...prevState,
@@ -57,6 +60,7 @@ const App = () => {
             <AppointmentsPage
               appointments={appointments}
               addNewAppointment={addNewAppointment}
+              contacts={contacts}
             />
           </Route>
         </Switch>
