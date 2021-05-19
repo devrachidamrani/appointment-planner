@@ -8,8 +8,7 @@ const App = () => {
     CONTACTS: '/contacts',
     APPOINTMENTS: '/appointments',
   }
-
-  // Define state variables for contacts and appointments
+  // Contacts
   const [contacts, setContacts] = useState([
     {
       name: 'Rachid',
@@ -18,6 +17,8 @@ const App = () => {
     },
     { name: 'Halima', phone: '+33624063450', email: 'halima@gmail.com' },
   ])
+
+  // Appointments
   const [appointments, setAppointments] = useState([])
 
   // Implement functions to add data to contacts and appointments
