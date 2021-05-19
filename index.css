@@ -80,7 +80,7 @@ select {
   box-sizing: border-box;
 }
 
-input:focus {
+input[type='text']:focus {
   background-color: #f5f1f1;
 }
 
